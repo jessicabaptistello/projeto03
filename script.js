@@ -1,56 +1,44 @@
-// ======================================================
-// 01 - Seleção de elementos
-// ======================================================
 
 const galeria = document.querySelector(".galeria");
 const modal = document.querySelector(".modal");
+const modalTitulo = document.getElementById("modalTitulo");
+const modalTexto = document.getElementById("modalTexto");
 const imagemGrande = document.getElementById("imagemGrande");
 const btnFechar = document.querySelector(".fechar");
 
-// ======================================================
-// 02 - Event Delegation (clicar em card abre modal)
-// ======================================================
-
 galeria.addEventListener("click", (e) => {
-  const card = e.target.closest(".card");
 
-  if (card) {
-    // Pega a imagem dentro do card
+  if (e.target.classList.contains("ver-mais")) {
+
+    const card = e.target.closest(".card");
     const img = card.querySelector("img");
+
+    modalTitulo.textContent = card.dataset.titulo;
+    modalTexto.textContent = card.dataset.texto;
     imagemGrande.src = img.src;
+
     modal.classList.remove("hidden");
   }
+
 });
 
-// ======================================================
-// 03 - Fechar clicando fora (bubbling)
-// ======================================================
 
 modal.addEventListener("click", () => {
   modal.classList.add("hidden");
 });
 
-// ======================================================
-// 04 - stopPropagation
-// Evita fechar ao clicar dentro da modal-content
-// ======================================================
 
-document.querySelector(".modal-content").addEventListener("click", (e) => {
-  e.stopPropagation();
-});
+document.querySelector(".modal-content")
+  .addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
 
-// ======================================================
-// 05 - Botão fechar (X)
-// ======================================================
 
 btnFechar.addEventListener("click", (e) => {
   e.stopPropagation();
   modal.classList.add("hidden");
 });
 
-// ======================================================
-// 06 - Fechar com tecla ESC
-// ======================================================
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
