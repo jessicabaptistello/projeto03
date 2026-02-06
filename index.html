@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Van Gogh - Imagens</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="galeria">
+
+        <article class="card" 
+            data-titulo="Noite Estrelada"
+            data-texto="Pintada em 1889, é uma das obras mais famosas de Van Gogh.">
+            
+            <img src="./Noite-estrelada-Van-Gogh.jpg" alt="Noite Estrelada">
+            <h3>Noite Estrelada</h3>
+            <p>Uma das obras mais conhecidas do artista.</p>
+            <button class="ver-mais">Ver grande & mais informações</button>
+        </article>
+
+        <article class="card" 
+            data-titulo="Os Girassóis"
+            data-texto="Parte de uma série pintada em Arles em 1888.">
+            
+            <img src="./Os-girassois.jpeg" alt="Girassóis">
+            <h3>Os Girassóis</h3>
+            <p>Série icônica cheia de cor e expressão.</p>
+            <button class="ver-mais">Ver grande & mais informações</button>
+        </article>
+
+        <article class="card" 
+            data-titulo="Terraço do Café"
+            data-texto="Pintura noturna famosa pela sua luz vibrante.">
+            
+            <img src="./terraco-do-cafe-na-praca-do-forum.jpg" alt="Terraço do Café">
+            <h3>Terraço do Café</h3>
+            <p>Uma das pinturas noturnas mais conhecidas.</p>
+            <button class="ver-mais">Ver grande & mais informações</button>
+        </article>
+
+    </main>
+
+    <div class="modal hidden">
+        <article class="modal-content">
+            <button class="fechar">×</button>
+            <h2 id="modalTitulo"></h2>
+            <p id="modalTexto"></p>
+            <img id="imagemGrande" src="" alt="Imagem ampliada">
+        </article>
+    </div>
+
+</body>
+</html>
